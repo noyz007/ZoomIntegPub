@@ -70,8 +70,11 @@ var testTool = {
   },
   parseQuery: function () {
     return (function () {
-      var href = window.location.href;
-      var queryString = href.substr(href.indexOf("?"));
+      //var href = window.location.href;
+      //var queryString = href.substr(href.indexOf("?"));
+      // YZYZ
+      var queryString = window.customQueryString;
+
       var query = {};
       var pairs = (queryString[0] === "?"
         ? queryString.substr(1)
