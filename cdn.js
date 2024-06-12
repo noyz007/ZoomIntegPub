@@ -72,13 +72,13 @@ function websdkready() {
 
      	video: {
       		isResizable: true,
-      		popper: {
-        		disableDraggable: true
+      		popper: { disableDraggable: true },
+          defaultViewType: "gallery",
       		},
       		viewSizes: {
         		default: {
-          			width: 600,
-          			height: 400
+          			width: 720,
+          			height: 411
         		},
         	ribbon: {
           		width: 300,
