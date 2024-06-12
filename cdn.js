@@ -71,9 +71,9 @@ function websdkready() {
       customize: {
 
      	video: {
-      		isResizable: true,
       		popper: { disableDraggable: true },
-          defaultViewType: "gallery",
+          isResizable: false,
+          defaultViewType: "gallery" as SuspensionViewType,
       		},
       		viewSizes: {
         		default: {
