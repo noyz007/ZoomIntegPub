@@ -72,8 +72,8 @@ function websdkready() {
 
      	video: {
       		popper: { disableDraggable: true },
-          isResizable: false,
-          defaultViewType: gallery,
+          isResizable: true,
+          defaultViewType: "gallery",
       		},
       		viewSizes: {
         		default: {
