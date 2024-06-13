@@ -136,6 +136,13 @@ chat: {
       userName: meetingConfig.userName,
       password: meetingConfig.passWord,
       userEmail: meetingConfig.userEmail,
+
+      success: function () {
+                ZoomMtg.showChat({ display: 'chat' }); // Set chat mode
+            },
+            error: function (res) {
+                console.error(res);
+            }
     })
     .then((e) => {
       console.log("success", e);
