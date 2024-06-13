@@ -74,7 +74,7 @@ function websdkready() {
 defaultViewType: "ribbon",     
         isResizable: true,
       		popper: { 
-        		disableDraggable: true
+        		disableDraggable: false
       		},
       		viewSizes: {
         		default: {
@@ -88,7 +88,7 @@ defaultViewType: "ribbon",
  	},
 chat: {
       popper: {
-        disableDraggable: true,
+        disableDraggable: false,
         //meetingSDKChatElement,
         anchorElement: rootElement, 
         placement: 'top'
