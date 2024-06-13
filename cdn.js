@@ -89,7 +89,8 @@ defaultViewType: "ribbon",
 chat: {
       popper: {
         disableDraggable: true,
-        anchorElement: meetingSDKChatElement,
+        //meetingSDKChatElement,
+        anchorElement: rootElement, 
         placement: 'top'
       }
     },
