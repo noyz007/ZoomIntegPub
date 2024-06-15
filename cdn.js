@@ -1,7 +1,8 @@
 /* eslint-disable no-undef */
+
 window.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
-  websdkready();
+  window.zmClient = websdkready();
 });
 
 function websdkready() {
@@ -149,4 +150,6 @@ function websdkready() {
     .catch((e) => {
       console.log("error", e);
     });
+  return zmClient;
 }
+
