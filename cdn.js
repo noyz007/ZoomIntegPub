@@ -87,10 +87,11 @@ function websdkready() {
 
   var c_width = 480;
   var c_height = 270;
-  var is_minimized = testTool.getCookie("isMinimizedClient");
+  var isMinimizedClient = testTool.getCookie("isMinimizedClient");
+  isMinimizedClient = (isMinimizedClient === 'true');
   
   console.log("managed to retreive: ", is_minimized);
-  if (is_minimized === "1") {
+  if (isMinimizedClient) {
     console.log("a, Minimaize");
     c_width = 244;
     c_height = 135;
