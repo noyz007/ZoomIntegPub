@@ -71,19 +71,19 @@ function websdkready() {
       customize: {
 
      	video: {
-defaultViewType: "ribbon",     
+         defaultViewType: "ribbon",    // does not work ???
         isResizable: true,
       		popper: { 
         		disableDraggable: false
       		},
       		viewSizes: {
-        		default: {
-          			width: 600,
-          			height: 400
+        		default: {    // ratio of 0.5625 - Width 240px, Height 135px
+          			width: 480,
+          			height: 270
         		},
-        	ribbon: {
-          		width: 300,
-          		height: 400
+        	ribbon: {     // Width 240px, Height 135px
+          		width: 240,
+          		height: 135
         	}
  	},
 chat: {
