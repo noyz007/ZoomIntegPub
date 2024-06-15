@@ -25,11 +25,18 @@ window.addEventListener("DOMContentLoaded", function (event) {
       default: {
         width: 244,
         height: 135
-      }
+      },
+        ribbon: {
+          width: 300,
+          height: 700
+        }
     }
   });
 }
+);
 
+
+                        
 function websdkready() {
   var testTool = window.testTool;
   // get meeting args from url
