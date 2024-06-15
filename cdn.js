@@ -90,9 +90,9 @@ function websdkready() {
   var isMinimizedClient = testTool.getCookie("isMinimizedClient");
   isMinimizedClient = (isMinimizedClient === 'true');
   
-  console.log("managed to retreive: ", is_minimized);
+  console.log("managed to retreive: ", isMinimizedClient );
   if (isMinimizedClient) {
-    console.log("a, Minimaize");
+    console.log("Minimaizing !!!!!!");
     c_width = 244;
     c_height = 135;
   }
