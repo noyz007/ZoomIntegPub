@@ -53,6 +53,7 @@ function websdkready() {
   }
   // WebSDK Embedded init
   var rootElement = document.getElementById("ZoomEmbeddedApp");
+  var meetingSDKChatElement = document.getElementById("meetingSDKChatElement");
   var zmClient = ZoomMtgEmbedded.createClient();
   var tmpPort = window.location.port === "" ? "" : ":" + window.location.port;
   var avLibUrl =
@@ -63,6 +64,36 @@ function websdkready() {
     "/lib";
   zmClient
     .init({
+
+
+  zoomAppRoot: rootElement,
+//YZYZ   language: 'en-US',
+
+   debug: true,
+      zoomAppRoot: rootElement, //meetingSDKElement, meetingSDKChatElement
+      webEndpoint: meetingConfig.webEndpoint,
+      language: meetingConfig.lang,
+      assetPath: avLibUrl,
+      
+  customize: {
+    video: {
+      popper: {
+        disableDraggable: true
+      }
+    },
+    chat: {
+      popper: {
+        disableDraggable: true,
+        anchorElement: meetingSDKChatElement,
+        placement: 'top'
+      }
+    },
+//YZYZ  },
+
+      
+      
+      /* YZYZ
+      
       debug: true,
       zoomAppRoot: rootElement, //meetingSDKElement, meetingSDKChatElement
       webEndpoint: meetingConfig.webEndpoint,
@@ -71,18 +102,18 @@ function websdkready() {
       customize: {
 
      	video: {
-         defaultViewType: "ribbon",    // does not work ???
+        defaultViewType: "ribbon",    // does not work ???
         isResizable: true,
       		popper: { 
         		disableDraggable: false
       		},
       		viewSizes: {
         		default: {    // ratio of 0.5625 - Width 240px, Height 135px
-          			width: 480,
-          			height: 270
+          			width: 244, // 480,
+          			height: 135 // 270
         		},
         	ribbon: {     // Width 240px, Height 135px
-          		width: 240,
+          		width: 244, //240
           		height: 135
         	}
  	},
@@ -91,11 +122,11 @@ chat: {
         disableDraggable: false,
         //meetingSDKChatElement,
         anchorElement: rootElement, 
-        placement: 'left'
+        placement: 'right' // does not work for some reason
       }
     },
         	
-      },
+      }, */ // YZYZ
         meetingInfo: [
           "topic",
           "host",
