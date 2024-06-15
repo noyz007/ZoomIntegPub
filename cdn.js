@@ -87,10 +87,10 @@ function websdkready() {
 
   var c_width = 480;
   var c_height = 270;
-
-  MeetingNAME = window.parent.MeetingName;
-  console.log("managed to retreive: ", MeetingNAME);
-  if (MeetingNAME === "a") {
+  var is_minimized = testTool.isMinimized();
+  
+  console.log("managed to retreive: ", is_minimized);
+  if (is_minimized === "1") {
     console.log("a, Minimaize");
     c_width = 244;
     c_height = 135;
