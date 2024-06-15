@@ -77,14 +77,14 @@ function websdkready() {
       
   customize: {
     video: {
-      defaultViewType: "ribbon", 
+      defaultViewType: "gallery", 
       popper: {
         disableDraggable: true
       },
       viewSizes: {
         		default: {    // ratio of 0.5625 - Width 240px, Height 135px
-          			width: 244, // 480,
-          			height: 135 // 270
+          			width: 480, //244, // 480,
+          			height: 270, //135 // 270
         		},
         	ribbon: {     // Width 240px, Height 135px
           		width: 244, //240
