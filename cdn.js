@@ -49,6 +49,7 @@ function websdkready() {
   }
 
   if (!meetingConfig.signature) {
+    // YZYZ should not get here
     window.location.href = "./nav.html";
   }
   // WebSDK Embedded init
@@ -64,27 +65,22 @@ function websdkready() {
     "/lib";
   zmClient
     .init({
-
-
   zoomAppRoot: rootElement,
-//YZYZ   language: 'en-US',
-
-   debug: true,
-      zoomAppRoot: rootElement, //meetingSDKElement, meetingSDKChatElement
-      webEndpoint: meetingConfig.webEndpoint,
-      language: meetingConfig.lang,
-      assetPath: avLibUrl,
+  debug: true,
+  webEndpoint: meetingConfig.webEndpoint,
+  language: meetingConfig.lang,
+  assetPath: avLibUrl,
       
   customize: {
     video: {
-      // defaultViewType: "gallery", 
+      // defaultViewType: "gallery", does not work
       popper: {
         disableDraggable: true
       },
       viewSizes: {
         		default: {    // ratio of 0.5625 - Width 240px, Height 135px
-          			width: 480, //244, // 480,
-          			height: 270, //135 // 270
+          			width: 480, //244, 
+          			height: 270, //135 
         		},
         	ribbon: {     // Width 240px, Height 135px
           		width: 244, //240
@@ -99,46 +95,7 @@ function websdkready() {
         placement: 'left'
       }
     },
-//YZYZ  },
-
-      
-      
-      /* YZYZ
-      
-      debug: true,
-      zoomAppRoot: rootElement, //meetingSDKElement, meetingSDKChatElement
-      webEndpoint: meetingConfig.webEndpoint,
-      language: meetingConfig.lang,
-      assetPath: avLibUrl,
-      customize: {
-
-     	video: {
-        defaultViewType: "ribbon",    // does not work ???
-        isResizable: true,
-      		popper: { 
-        		disableDraggable: false
-      		},
-      		viewSizes: {
-        		default: {    // ratio of 0.5625 - Width 240px, Height 135px
-          			width: 244, // 480,
-          			height: 135 // 270
-        		},
-        	ribbon: {     // Width 240px, Height 135px
-          		width: 244, //240
-          		height: 135
-        	}
- 	},
-chat: {
-      popper: {
-        disableDraggable: false,
-        //meetingSDKChatElement,
-        anchorElement: rootElement, 
-        placement: 'right' // does not work for some reason
-      }
-    },
-        	
-      }, */ // YZYZ
-        meetingInfo: [
+         meetingInfo: [
           "topic",
           "host",
           "mn",
