@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
   zmClient = websdkready();
 
+  /*
   // Check if zmClient is initialized
   if (!zmClient) {
     console.error('Zoom client is not initialized.');
@@ -30,7 +31,8 @@ window.addEventListener("DOMContentLoaded", function (event) {
           height: 700
         }
     }
-  });
+  }); */
+  
 });
 
 
@@ -85,8 +87,8 @@ function websdkready() {
 
   var c_width = 480;
   var c_height = 270;
- 
-  var MeetingROLE = Qualtrics.SurveyEngine.getEmbeddedData('MeetingNAME');
+
+  MeetingNAME = window.MeetingName;
   console.log("managed to retreive: ", MeetingNAME);
   if (MeetingNAME === "a") {
     console.log("a, Minimaize");
