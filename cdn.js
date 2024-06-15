@@ -77,7 +77,7 @@ function websdkready() {
       
   customize: {
     video: {
-      defaultViewType: "gallery", 
+      // defaultViewType: "gallery", 
       popper: {
         disableDraggable: true
       },
