@@ -2,8 +2,33 @@
 
 window.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
-  window.parent.zmClient = websdkready();
-});
+  zmClient = websdkready();
+
+
+
+    // Check if zmClient is initialized
+  if (!zmClient) {
+    console.error('Zoom client is not initialized.');
+    return;
+  }
+
+  // Check if updateVideoOptions method exists
+  if (typeof zmClient.updateVideoOptions !== 'function') {
+    console.error('updateVideoOptions method is not available on the Zoom client.');
+    return;
+  }
+
+  	console.log("trying to minimize");
+  // Update video options
+  zmClient.updateVideoOptions({
+    viewSizes: {
+      default: {
+        width: 244,
+        height: 135
+      }
+    }
+  });
+}
 
 function websdkready() {
   var testTool = window.testTool;
