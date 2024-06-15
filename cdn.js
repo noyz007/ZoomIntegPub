@@ -2,7 +2,7 @@
 
 window.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
-  window.zmClient = websdkready();
+  window.parent.zmClient = websdkready();
 });
 
 function websdkready() {
