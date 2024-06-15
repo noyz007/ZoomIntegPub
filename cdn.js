@@ -4,9 +4,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
   zmClient = websdkready();
 
-
-
-    // Check if zmClient is initialized
+  // Check if zmClient is initialized
   if (!zmClient) {
     console.error('Zoom client is not initialized.');
     return;
@@ -18,8 +16,9 @@ window.addEventListener("DOMContentLoaded", function (event) {
     return;
   }
 
-  	console.log("trying to minimize");
+  console.log("trying to minimize");
   // Update video options
+  // updateVideoOptions is currently not well supported.
   zmClient.updateVideoOptions({
     viewSizes: {
       default: {
@@ -32,11 +31,9 @@ window.addEventListener("DOMContentLoaded", function (event) {
         }
     }
   });
-}
-);
+});
 
 
-                        
 function websdkready() {
   var testTool = window.testTool;
   // get meeting args from url
@@ -85,6 +82,19 @@ function websdkready() {
     // YZYZ should not get here
     window.location.href = "./nav.html";
   }
+
+  var c_width = 480;
+  var c_height = 270;
+ 
+  var MeetingROLE = Qualtrics.SurveyEngine.getEmbeddedData('MeetingNAME');
+  console.log("managed to retreive: ", MeetingNAME);
+  if (MeetingNAME === "a") {
+    console.log("a, Minimaize");
+    c_width = 244;
+    c_height = 135;
+  }
+     
+  
   // WebSDK Embedded init
   var rootElement = document.getElementById("ZoomEmbeddedApp");
   var meetingSDKChatElement = document.getElementById("meetingSDKChatElement");
@@ -112,8 +122,8 @@ function websdkready() {
       },
       viewSizes: {
         		default: {    // ratio of 0.5625 - Width 240px, Height 135px
-          			width: 480, //244, 
-          			height: 270, //135 
+          			width: c_width, //480, //244, 
+          			height: c_height // 270, //135 
         		},
         	ribbon: {     // Width 240px, Height 135px
           		width: 244, //240
