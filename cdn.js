@@ -91,7 +91,7 @@ chat: {
         disableDraggable: false,
         //meetingSDKChatElement,
         anchorElement: rootElement, 
-        placement: 'top'
+        placement: 'right'
       }
     },
         	
