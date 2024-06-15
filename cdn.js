@@ -96,7 +96,7 @@ function websdkready() {
       popper: {
         disableDraggable: true,
         anchorElement: meetingSDKChatElement,
-        placement: 'left'
+        placement: 'top'
       }
     },
 //YZYZ  },
