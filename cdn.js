@@ -90,6 +90,7 @@ function websdkready() {
           		width: 244, //240
           		height: 135
         	}
+      },
     },
     chat: {
       popper: {
